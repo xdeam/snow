@@ -1,0 +1,97 @@
+@charset "utf-8";
+ul{
+	float: left;
+	padding: 0px;
+	height: 20px;
+}
+li {
+	float:left;
+	list-style-type: none;
+    padding: 30px;
+	color: white;
+	
+}
+li:hover{
+	color: black;
+	border-bottom:groove;
+	  
+}
+#line1{
+	display: inline;
+	height: auto;
+	margin: 0;
+	float: left;
+}
+#img{
+	float: left;
+	margin-right: 60px;
+}
+#head{
+	
+	height: 100px;
+	background-color:#16a085;
+}
+#first{
+	display: none;
+	height:700px;
+    background-color: darkgray;
+}
+#login{
+	height: 600px;
+	background-color:#009999;
+}
+.button{
+	background-color:#16a085;
+	color: white;
+}
+#me{
+	height: 600px;
+	background-color:#009999;
+
+}
+.notes{
+		
+	float: left;
+	margin: 50px 50px  50px 50px;
+	height: 110px;
+	width: 700px;
+	background-color:#33cc99;
+}
+.notes_title{
+	float: left;
+	padding-top: 10px;
+	padding-left: 10px;
+	text-align:start;
+	font-size: 50px;
+}
+.notes_content{
+	display: inline;
+	width: 400px;
+	height: 110px;
+	float: left;
+	margin-top: 10px; 
+	margin-bottom: 10px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+.notes_time{
+	margin-top: 30px;
+	align-content: center;
+	float: left;
+	font-size: 25px;
+}
+#edit{
+	font-size: 50px;
+    margin-left: 50px;
+    margin-top: 50px;
+	float: left;
+	height: 110px;
+	width: 700px;
+	background-color:#33cc99;
+}
+#write{
+	background-color:#16a085;
+	font-size: 30px;
+	float: right;
+	padding: 31px;
+}

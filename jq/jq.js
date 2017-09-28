@@ -1,0 +1,22 @@
+$(function(){
+	$("#sy").hover(function(){
+	  	$("#first").show();
+	  	$("#login").hide();
+	  	$("me").hide();
+	})
+	$("#dl").hover(function(){
+	  	$("#first").hide();
+	  	$("#login").show();
+	  	$("me").hide();
+	})
+	$("#wo").hover(function(){
+	  	$("#first").hide();
+	  	$("#login").hide();
+	  	$("me").show();
+	})
+	$("[name=loginbt]").mousemove(function(){
+		$(".am-form-set").hide();
+		$(this).siblings(".am-form-set").show();
+	});
+	
+})
