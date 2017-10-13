@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>无标题文档</title>
+<script src="jssdk/bmob-min.js"></script>
 <link href="css/profile.css" rel="stylesheet" type="text/css" />
 <link href="assist/css/amazeui.css" rel="stylesheet" type="text/css" />
  <script src="jq/jquery-1.6.3.min.js"></script>
@@ -26,24 +27,27 @@
                 </div>
             </div>
         </div>
- <div id="first"></div>
-  <div id="login" style="display: none;">
+ <div id="first">
+ 	
+ 	
+ </div>
+  <div id="login" style="background: url(img/bg.png);">
   <div class="am-g">
   <div class="am-u-md-8 am-u-sm-centered">
     <form class="am-form">
       <fieldset class="am-form-set" style="display: none;">
-        <input type="text" placeholder="取个名字">
-        <input type="text" placeholder="设个密码">
-        <input type="email" placeholder="填下邮箱">
+        <input name="username" type="text" placeholder="取个名字">
+        <input name="password" type="text" placeholder="设个密码">
+        <input name="email" type="email" placeholder="填下邮箱">
       </fieldset>
-      <button type="button"  name="loginbt" class="am-btn am-btn-primary am-btn-block">注册个账号</button>
+      <button type="button" id="signin" name="loginbt" class="am-btn am-btn-primary am-btn-block">注册个账号</button>
     </form>
     <form class="am-form">
      <fieldset class="am-form-set" style="display: none;">
-        <input type="text" placeholder="填个名字">
-        <input type="text" placeholder="输个密码">
+        <input id="uname" type="text" placeholder="填个名字">
+        <input id="upass"type="password" placeholder="输个密码">
       </fieldset>
-     <button type="button" name="loginbt" class="am-btn am-btn-success am-btn-block">老用户登陆</button>
+     <button type="button" id="signup" name="loginbt" class="am-btn am-btn-success am-btn-block">老用户登陆</button>
   </form>
   </div>
 </div>
@@ -51,12 +55,17 @@
   <div id="me">
   	<div id="edit">
   		Tips :)
-  		<div id="write">Write</div>
+  		<div id="write" ><a href="#">Write</a></div>
   	</div>
+
   	<div id="notes_add">
-  		<form>
+  		<form action="" >
+            <input type="text" id="ntitle"class="wNotes" placeholder="标题"/>
+            <textarea style="resize: none;" id="neirong" class="wNotes" placeholder="内容"></textarea>
+  		    <input type="button" value="确定" id="send" class="am-btn-primary"/>
   		</form>
   	</div>
+  	
   	<div class="notes">
   	   <div class="notes_title">标题</div>
   	   <div class="notes_content">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容内容内容内容内容</div>
