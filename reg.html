@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link href="assist/css/amazeui.css" rel="stylesheet" type="text/css" />
+		<script src="jssdk/bmob-min.js"></script>
+
+		<script src="jq/jquery-1.6.3.min.js"></script>				<script src="jssdk/bmob-min.js"></script>
+
+		<script src="jq/util.js"></script>
+		<script>
+			$(function(){
+				$("#xhead").load("head.html")
+			    $("#signup").click(function(){
+			    	test=0
+			    	var zz=/[a-z0-9A-Z]{5}/
+			    	var et=/\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}/
+			    	var pt=/^[a-z][a-zA-Z0-9]{3,9}/
+			    	var uname=$("[name=username]").val()
+			    	upass=$("[name=password]").val()
+			    	email=$("[name=email]").val()
+			    /*	if(!zz.test(uname))
+			    	  alert("请输入符合要求的用户名：长度为5位的字母或数字")
+			    	else test+=1
+			    	if(!et.test(email))
+			    	  alert("邮箱不合法")
+			    	else test+=1
+			    	if(!pt.test(upass))
+			    	  alert("密码不合法")
+			    	else test+=1
+			    	if(test==3){*/
+			    	   saveUser(uname,upass,email)
+			    	//}
+			    	   
+			    })
+			})
+			function saveUser(name,pass,email){
+  Bmob.initialize("37b466960b81f0472be3e12b7173320a", "1ddff6b686c5a86df7e8f5e853498be1");
+  var User = Bmob.Object.extend("user");
+    var user = new User();
+  
+     user.set("name",name)
+     user.set("pass",pass)
+     user.set("email",email)
+    
+    user.save(null, {
+      success: function(object) {
+        alert("create object success, object id:"+object.id);
+      },
+      error: function(model, error) {
+        alert("create object fail"+error.description);
+      }
+     });
+	
+	
+}
+
+		</script>
+		<style>
+			#xhead{
+				padding:0;
+			    margin:0;
+			}
+		</style>
+	</head>
+	<body style="background: url(img/bg.png);">
+		　<div id="xhead"></div>
+		 <div class="am-g">
+         <div class="am-u-md-8 am-u-sm-centered">
+		  <form id="reg_form" class="am-form" ">
+	      <fieldset class="am-form-set" ">
+	        <input name="username" type="text" placeholder="取个名字">
+	        <input name="password" type="text" placeholder="设个密码">
+	        <input name="email" type="email" placeholder="填下邮箱">
+	      </fieldset>
+	      <button type="button" id="signup" name="loginbt" class="am-btn am-btn-primary am-btn-block">注册个账号</button>
+	    </form>
+	    </div>
+	    </div>
+	</body>
+</html>

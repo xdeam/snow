@@ -34,16 +34,11 @@
   <div id="login" style="background: url(img/bg.png);">
   <div class="am-g">
   <div class="am-u-md-8 am-u-sm-centered">
-    <form class="am-form">
-      <fieldset class="am-form-set" style="display: none;">
-        <input name="username" type="text" placeholder="取个名字">
-        <input name="password" type="text" placeholder="设个密码">
-        <input name="email" type="email" placeholder="填下邮箱">
-      </fieldset>
-      <button type="button" id="signin" name="loginbt" class="am-btn am-btn-primary am-btn-block">注册个账号</button>
-    </form>
-    <form class="am-form">
-     <fieldset class="am-form-set" style="display: none;">
+  	<span>还没有账号？立即注册-></span>
+  	<input id="show_reg" type="button" class="am-btn-primary" value="注册" />
+   
+    <form id="login_form" class="am-form">
+     <fieldset class="am-form-set" ">
         <input id="uname" type="text" placeholder="填个名字">
         <input id="upass"type="password" placeholder="输个密码">
       </fieldset>

@@ -3,6 +3,13 @@ $(function(){
 Bmob.initialize("37b466960b81f0472be3e12b7173320a", "1ddff6b686c5a86df7e8f5e853498be1");
     queryX()
     var flag
+    $("#show_reg").click(function(){
+    	/*$("#reg_form").show()
+    	$("#login_form").hide()
+    	$(this).hide()
+    	$(this).siblings("span").hide()*/
+    	window.location="reg.html"
+    })
 	$("#sy").click(function(){
 	  /*	$("#first").show();
 	  	$("#login").hide();
@@ -20,10 +27,10 @@ Bmob.initialize("37b466960b81f0472be3e12b7173320a", "1ddff6b686c5a86df7e8f5e8534
 	  	$("#me").show();
 	  	$("#me").height($(document).height())
 	})
-	$("[name=loginbt]").mousemove(function(){
+/*	$("[name=loginbt]").mousemove(function(){
 		$(".am-form-set").hide();
 		$(this).siblings(".am-form-set").show();
-	});
+	});*/
 	$("#write").click(function () {
 		if(!flag){
       	$("#notes_add").show()
@@ -62,22 +69,7 @@ Bmob.initialize("37b466960b81f0472be3e12b7173320a", "1ddff6b686c5a86df7e8f5e8534
 	    queryX()
 	})
 	$("#signin").click(function(){
-	var User = Bmob.Object.extend("user");
-    var user = new User();
-    var name=$("[name=username]").val();
-    var pass=$("[name=password]").val();
-    var email=$("[name=email]").val();
-    user.set("name",name);
-     user.set("pass",pass);
-      user.set("email",email);
-    user.save(null, {
-      success: function(object) {
-        alert("create object success, object id:"+object.id);
-      },
-      error: function(model, error) {
-        alert("create object fail"+error.description);
-      }
-     });
+	
 	});	
 	$("#signup").click(function(){
     var User = Bmob.Object.extend("user");//创建查询对象，入口参数是对象类的实例
@@ -95,7 +87,11 @@ Bmob.initialize("37b466960b81f0472be3e12b7173320a", "1ddff6b686c5a86df7e8f5e8534
         var object = results[i];
           vpass=object.get('pass')
          // alert(vpass)
-         if(vpass==pass){alert("aaaa")}
+         if(vpass==pass){alert("aaaa")
+         	$("#first").hide();
+	  	$("#login").hide();
+	  	$("#me").show();
+	  	$("#me").height($(document).height())}
         }
     },
     error: function(error) {
