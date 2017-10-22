@@ -1,5 +1,21 @@
 $(function(){
-	$("#login").height($(document).height())
+	
+	
+	
+	
+	$("#login").height($(document).height());
+	/*alert($.cookie("name"))*/
+		  
+	//alert(getCookie("name"))
+	userinfo=getCookie("name")
+	/*userinfo=$.cookie("name");*/
+	if(userinfo!=""){
+		 $("#first").hide();
+		  	$("#login").hide();
+		  	$("#me").show();
+		  	$("#me").height($(document).height())
+		  	
+	}
 Bmob.initialize("37b466960b81f0472be3e12b7173320a", "1ddff6b686c5a86df7e8f5e853498be1");
     queryX()
     var flag
@@ -72,6 +88,10 @@ Bmob.initialize("37b466960b81f0472be3e12b7173320a", "1ddff6b686c5a86df7e8f5e8534
 	
 	});	
 	$("#signup").click(function(){
+		var name=$("#uname").val();
+        var pass=$("#upass").val();
+        checkUser(name,pass)
+/*        
     var User = Bmob.Object.extend("user");//创建查询对象，入口参数是对象类的实例
 	var query = new Bmob.Query(User);
     var name=$("#uname").val();
@@ -98,7 +118,7 @@ Bmob.initialize("37b466960b81f0472be3e12b7173320a", "1ddff6b686c5a86df7e8f5e8534
         alert("查询失败: " + error.code + " " + error.message);
     }
     
-});  
+});  */
    
     })
 })
@@ -129,5 +149,16 @@ function queryX(){
     }
 	
 	})
+}
+function getCookie(cname)
+{
+  var name = cname + "=";
+  var ca = document.cookie.split(';');
+  for(var i=0; i<ca.length; i++) 
+  {
+    var c = ca[i].trim();
+    if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+  }
+  return "";
 }
  
